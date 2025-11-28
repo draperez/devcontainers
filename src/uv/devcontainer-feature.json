@@ -1,38 +1,6 @@
 {
   "id": "uv",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "name": "UV Python Environment",
-  "description": "Installs uv from astral/uv image and configures Python environment",
-  "options": {
-    "pythonVersion": {
-      "type": "string",
-      "default": "3.14",
-      "description": "Python version to use from astral/uv image"
-    },
-    "projectEnvironment": {
-      "type": "string",
-      "default": "/tmp/venv",
-      "description": "Path for UV_PROJECT_ENVIRONMENT"
-    },
-    "postCreateCommand": {
-      "type": "string",
-      "default": "uv venv --clear",
-      "description": "Command to run after container creation"
-    },
-    "postStartCommand": {
-      "type": "string",
-      "default": "if [ -f pyproject.toml ]; then uv sync --extra dev; fi",
-      "description": "Command to run when container starts"
-    }
-  },
-  "containerEnv": {
-    "UV_PROJECT_ENVIRONMENT": "${projectEnvironment}"
-  },
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "python.defaultInterpreterPath": "${projectEnvironment}/bin/python"
-      }
-    }
-  }
+  "description": "Installs uv from astral/uv script"
 }

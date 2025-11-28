@@ -1,10 +1,8 @@
 #!/bin/bash
 set -e
 
-# Get options from devcontainer-feature.json
-PYTHON_VERSION="${PYTHONVERSION:-3.14}"
-UV_PROJECT_ENVIRONMENT="${PROJECTENVIRONMENT:-/tmp/venv}"
-
+# Check if curl is installed
+# This is required to download the uv installer script
 if ! command -v curl &> /dev/null; then
     echo "curl is required but not installed. Please install curl and try again."
     exit 1
@@ -14,7 +12,7 @@ fi
 echo "Installing uv from astral..."
 
 
-# Fallback: download uv using the install script
+# Download uv using the install script
 echo "Using uv installer..."
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
@@ -36,7 +34,6 @@ if [ -z "$UV_BIN" ]; then
     exit 1
 fi
 
-# If we are root, move to /usr/local/bin so it's available to all users
 if [ "$(id -u)" -eq 0 ]; then
     echo "Running as root, moving uv to /usr/local/bin..."
     mv "$UV_BIN" /usr/local/bin/uv
@@ -71,4 +68,4 @@ else
     exit 1
 fi
 
-echo "UV_PROJECT_ENVIRONMENT will be set to: ${UV_PROJECT_ENVIRONMENT}"
+
