@@ -1,6 +1,6 @@
 {
   "id": "uv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "UV Python Environment",
   "description": "Installs uv from astral/uv image and configures Python environment",
   "options": {
