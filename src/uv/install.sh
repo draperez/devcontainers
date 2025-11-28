@@ -5,6 +5,12 @@ set -e
 PYTHON_VERSION="${PYTHONVERSION:-3.14}"
 UV_PROJECT_ENVIRONMENT="${PROJECTENVIRONMENT:-/tmp/venv}"
 
+if ! command -v curl &> /dev/null; then
+    echo "curl is required but not installed. Please install curl and try again."
+    exit 1
+fi
+
+
 echo "Installing uv from astral..."
 
 

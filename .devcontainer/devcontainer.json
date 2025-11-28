@@ -1,0 +1,20 @@
+{
+    "name": "Devcontainer Feature Development",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts",
+            "pnpmVersion": "none"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "github.vscode-github-actions"
+            ]
+        }
+    },
+    "postCreateCommand": "npm install npm@latest -g && npm install -g @devcontainers/cli"
+}
