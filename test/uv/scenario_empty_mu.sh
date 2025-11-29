@@ -1,4 +1,5 @@
 #!/bin/bash
 set -e
 
-source "$(dirname "$0")/install_uv_auto.sh"
+# No pipx installed, so it should have used script installation
+source "$(dirname "$0")/install_from_script.sh"
