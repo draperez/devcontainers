@@ -1,0 +1,86 @@
+{
+    "scenario_empty_python": {
+        "image": "mcr.microsoft.com/devcontainers/python:3",
+        "features": {
+            "uv": {}
+        }
+    },
+    "scenario_auto_python": {
+        "image": "mcr.microsoft.com/devcontainers/python:3",
+        "features": {
+            "uv": {
+                "installationMethod": "auto"
+            }
+        }
+    },
+    "scenario_pipx_python": {
+        "image": "mcr.microsoft.com/devcontainers/python:3",
+        "features": {
+            "uv": {
+                "installationMethod": "pipx"
+            }
+        }
+    },
+    "scenario_script_python": {
+        "image": "mcr.microsoft.com/devcontainers/python:3",
+        "features": {
+            "uv": {
+                "installationMethod": "script"
+            }
+        }
+    },
+    "scenario_empty_mu": {
+        "image": "registry.gitlab.com/mu-bd-ce/devcontainers/python",
+        "features": {
+            "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+                "packages": "curl"
+            },
+            "uv": {}
+        }
+    },
+    "scenario_auto_mu": {
+        "image": "registry.gitlab.com/mu-bd-ce/devcontainers/python",
+        "features": {
+            "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+                "packages": "curl"
+            },
+            "uv": {
+                "installationMethod": "auto"
+            }
+        }
+    },
+    "scenario_auto_no_curl_mu": {
+        "image": "registry.gitlab.com/mu-bd-ce/devcontainers/python",
+        "features": {
+            "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+                "packages": "pipx"
+            },
+            "uv": {
+                "installationMethod": "auto"
+            }
+        }
+    },
+    "scenario_pipx_mu": {
+        "image": "registry.gitlab.com/mu-bd-ce/devcontainers/python",
+        "features": {
+            "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+                "packages": "pipx"
+            },
+            "uv": {
+                "installationMethod": "pipx"
+            }
+        }
+    },
+    "scenario_script_mu": {
+        "image": "registry.gitlab.com/mu-bd-ce/devcontainers/python",
+        "features": {
+            "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+                "packages": "curl"
+            },
+
+            "uv": {
+                "installationMethod": "script"
+            }
+        }
+    }
+}

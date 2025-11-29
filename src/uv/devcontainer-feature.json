@@ -1,6 +1,18 @@
 {
   "id": "uv",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "name": "UV Python Environment",
-  "description": "Installs uv from astral/uv script"
+  "description": "Installs uv from astral/uv script",
+  "options": {
+    "installationMethod": {
+      "default": "auto",
+      "description": "Select how UV will be installed",
+      "proposals": [
+        "auto",
+        "pipx",
+        "script"
+      ],
+      "type": "string"
+    }
+  }
 }
